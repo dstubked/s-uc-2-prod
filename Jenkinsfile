@@ -14,7 +14,7 @@ node {
     }
     
     stage ('Aqua Scan') {
-        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'dstubked-docker.jfrog.io/ubuntu:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'Jfrog-registry', showNegligible: false
+        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'dstubked-docker.jfrog.io/ubuntu:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'JFrog', showNegligible: false
     }
     
     stage('Push image') {
