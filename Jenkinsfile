@@ -10,11 +10,11 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com:8082/docker/ubuntu:good")
+        app = docker.build("ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com/docker/ubuntu:good")
     }
     
     stage ('Aqua Scan') {
-        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com:8082/docker/ubuntu:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'Jfrog-registry', showNegligible: false
+        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com/docker/ubuntu:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'Jfrog-registry', showNegligible: false
     }
     
     stage('Push image') {
@@ -22,7 +22,7 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          */
-        docker.withRegistry('http://ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com:8082', 'jfrog') {
+        docker.withRegistry('http://ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com', 'jfrog') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
