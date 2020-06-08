@@ -14,7 +14,7 @@ node {
     }
     
     stage ('Aqua Scan') {
-        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com:8082/docker/ubuntu:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: false, registry: '', showNegligible: false
+        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'ec2-18-140-198-74.ap-southeast-1.compute.amazonaws.com:8082/docker/ubuntu:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'Jfrog-registry', showNegligible: false
     }
     /*stage('Aqua Scanner CLI') {
             sh "echo Hello from the shell"
