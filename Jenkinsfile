@@ -24,8 +24,6 @@ node {
          */
         docker.withRegistry('https://dstubked-docker.jfrog.io', 'jfrog') {
             app.push()
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
         }
     }
     
