@@ -10,11 +10,11 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("dstubked-docker.jfrog.io/alpine:good")
+        app = docker.build("dstubked-docker.jfrog.io/orders-nginx:good")
     }
     
     stage ('Aqua Scan') {
-        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'dstubked-docker.jfrog.io/alpine:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'JFrog', showNegligible: false
+        aqua customFlags: '', hideBase: false, hostedImage: '', localImage: 'dstubked-docker.jfrog.io/orders-nginx:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'JFrog', showNegligible: false
     }
     
     stage('Push image') {
