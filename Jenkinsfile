@@ -7,21 +7,20 @@ node {
         checkout scm
     }
     
-   stage('Pull image') {
+   stage ('Aqua Scan Dev Namespace') {
+        aqua customFlags: '--layer-vulnerabilities', hideBase: false, hostedImage: '', localImage: 'dstubked-docker.jfrog.io/orders-nginx-dev:good', locationType: 'remote', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: false, registry: 'JFrog', showNegligible: false
+    }    
+   /*stage('Pull image') {
         docker.withRegistry('https://dstubked-docker.jfrog.io', 'jfrog') {
             sh "docker pull dstubked-docker.jfrog.io/orders-nginx-dev:good"
         }
-    }
+    }*/
     
     /*stage('Pull Dev Image') {
         /* This builds the actual image /*
         sh "docker pull dstubked-docker.jfrog.io/orders-nginx-dev:good"
         origapp = docker.pull("dstubked-docker.jfrog.io/orders-nginx-dev:good")
     }*/
-    
-    stage ('Aqua Scan Dev App') {
-        aqua customFlags: '--layer-vulnerabilities', hideBase: false, hostedImage: '', localImage: 'dstubked-docker.jfrog.io/orders-nginx-dev:good', locationType: 'local', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: true, registry: 'JFrog', showNegligible: false
-    }
     
     /*stage('Push image') {
         docker.withRegistry('https://dstubked-docker.jfrog.io', 'jfrog') {
