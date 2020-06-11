@@ -9,7 +9,7 @@ node {
     
    stage('Pull image') {
         docker.withRegistry('https://dstubked-docker.jfrog.io', 'jfrog') {
-            origapp = dstubked-docker.jfrog.io/orders-nginx-dev:good
+            origapp = "dstubked-docker.jfrog.io/orders-nginx-dev:good"
             origapp.pull()
         }
     }
