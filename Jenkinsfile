@@ -31,16 +31,4 @@ node {
             sh "docker push dstubked-docker.jfrog.io/orders-nginx-prod:good"
         }
     }
-    
-    /*stage('Pull Dev Image') {
-        /* This builds the actual image /*
-        sh "docker pull dstubked-docker.jfrog.io/orders-nginx-dev:good"
-        origapp = docker.pull("dstubked-docker.jfrog.io/orders-nginx-dev:good")
-    }*/
-    
-    /*stage('Push image') {
-        docker.withRegistry('https://dstubked-docker.jfrog.io', 'jfrog') {
-            app.push()
-        }
-    }*/
 }
