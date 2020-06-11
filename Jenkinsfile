@@ -9,8 +9,8 @@ node {
 
     stage('Pull Dev Image') {
         /* This builds the actual image */
-
-        origapp = docker.pull("dstubked-docker.jfrog.io/orders-nginx-dev:good")
+        sh "docker pull dstubked-docker.jfrog.io/orders-nginx-dev:good"
+        /*origapp = docker.pull("dstubked-docker.jfrog.io/orders-nginx-dev:good")*/
     }
     
     stage ('Aqua Scan Dev App') {
