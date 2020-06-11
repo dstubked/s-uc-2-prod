@@ -8,7 +8,7 @@ node {
     }
     
    stage ('Aqua Scan Dev Namespace') {
-        aqua customFlags: '--layer-vulnerabilities', hideBase: false, hostedImage: 'dstubked-docker.jfrog.io/orders-nginx-dev:good', localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: false, registry: 'JFrog', showNegligible: false
+        aqua customFlags: '--layer-vulnerabilities', hideBase: false, hostedImage: 'orders-nginx-dev:good', localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: false, registry: 'JFrog', showNegligible: false
     }    
    /*stage('Pull image') {
         docker.withRegistry('https://dstubked-docker.jfrog.io', 'jfrog') {
